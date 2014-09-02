@@ -3,22 +3,27 @@
   h1 {color: #1f0d87;}
   html {background: #eadede;}
   </style>
-  <h1>This is my fun game</h1>
+  <h1>This is my very short game</h1>
   <script>
-  var number = Math.ceil(Math.random()*10);
-  var name = prompt("Let's have your name now. ");
-  while (true){
-    var response = prompt(name + ", guess the number I'm thinking of!");
-    if (response == number){
-        alert(name + ' you win!');
-    	break;
-    }
-    if (response > number){
-        confirm('too HIGH');
-    }
-    if (response < number){
-        confirm('TOO low.');
-    }
-  }
+    function(){
+      var number = Math.ceil(Math.random()*10);
+      var name = prompt("Let's have your name now. ");
+      var guesses_left = 2;
+      while (guesses_left > 0) {
+        var response = prompt(name + ", guess the number I'm thinking of!");
+        if (response == number){
+          alert(name + ' you win!');
+          return
+        }
+        if (response > number){
+            confirm('too HIGH');
+        }
+        if (response < number){
+            confirm('TOO low.');
+        }
+        guesses_left--;
+      }
+      alert('you lose!'))
+    };
   </script>
 </html>
