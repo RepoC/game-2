@@ -6,11 +6,18 @@
   <h1>This is my fun game</h1>
   <script>
   var number = Math.ceil(Math.random()*10);
+  var name = prompt("Let's have your name now. ");
   while (true){
-    var response = prompt("Guess the number I'm thinking of!");
+    var response = prompt(name + ", guess the number I'm thinking of!");
     if (response == number){
-        alert('you win!');
+        alert(name + ' you win!');
     	break;
+    }
+    if (response > number){
+        alert('too HIGH');
+    }
+    if (response > number){
+        alert('TOO low.');
     }
   }
   </script>
